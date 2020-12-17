@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 // 进行一些全局配置
-axios.defaults.baseURL = 'http://127.0.0.1:3000'
-axios.defaults.timeout = 3000
+axios.defaults.baseURL = 'http://127.0.0.1:3000/'
+axios.defaults.timeout = 5000
 
 // 封装自己的get / post 方法
 export default {
@@ -12,7 +12,7 @@ export default {
         params: data
       })
         .then(function (response) {
-          resolve(response)
+          resolve(response.data)
         })
         .catch(function (error) {
           reject(error)
@@ -23,7 +23,7 @@ export default {
     return new Promise(function (resolve, reject) {
       axios.post(path, data)
         .then(function (response) {
-          resolve(response)
+          resolve(response.data)
         })
         .catch(function (error) {
           reject(error)

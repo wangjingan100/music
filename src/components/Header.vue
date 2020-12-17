@@ -34,6 +34,8 @@ export default {
   @include bg-color();
   display: flex;
   justify-content:space-between;
+  position: relative;
+  z-index: 999;
   .header-left, .header-right{
     width:84px;
     height:84px;
